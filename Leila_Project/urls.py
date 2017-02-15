@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'', include('Leila.urls')),
     url(r'^login/$', views.login, {'template_name': 'Leila/login.html', 'authentication_form': LoginForm}),
+    url(r'^/login/$', 'django.contrib.auth.views.login', name='login'),
     url(r'^logout/$', views.logout, {'next_page': '/login'}),
+
 ]
