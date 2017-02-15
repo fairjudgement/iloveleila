@@ -16,11 +16,11 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(serialize=False, primary_key=True, verbose_name='ID', auto_created=True)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('baslik', models.CharField(max_length=200)),
-                ('Your_Territory', models.TextField()),
+                ('yazi', models.TextField()),
                 ('yaratilma_tarihi', models.DateTimeField(default=django.utils.timezone.now)),
-                ('yayinlanma_tarihi', models.DateTimeField(null=True, blank=True)),
+                ('yayinlanma_tarihi', models.DateTimeField(blank=True, null=True)),
                 ('yazar', models.ForeignKey(to=settings.AUTH_USER_MODEL)),
             ],
         ),
