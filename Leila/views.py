@@ -2,7 +2,9 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
 from .forms import PostForm
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="login/")
 def post_list(request):
     posts = Post.objects.filter(yayinlanma_tarihi__lte=timezone.now()).order_by('yayinlanma_tarihi')
     return render(request, 'Leila/post_list.html', {'posts':posts})
@@ -19,7 +21,7 @@ def post_new(request):
             post.yazar = request.user
             post.yayinlanma_tarihi = timezone.now()
             post.save()
-            return redirect('blog.views.post_detail', pk=post.pk)
+            return redirect('Leila.views.post_detail', pk=post.pk)
     else:
         form = PostForm()
     return render(request, 'Leila/post_edit.html', {'form': form})
@@ -33,7 +35,7 @@ def post_edit(request, pk):
             post.yazar = request.user
             post.yayinlanma_tarihi = timezone.now()
             post.save()
-            return redirect('blog.views.post_detail', pk=post.pk)
+            return redirect('Leila.views.post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'Leila/post_edit.html', {'form': form})

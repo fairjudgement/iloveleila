@@ -3,19 +3,21 @@ h1 a {
     font-family: 'cursive';
 }
 body {
-    padding-left: 15px;
+    padding-left: 30px;
+    padding-right: 10px;
 }
 .page-header {
-    background-color: rosybrown;
+    background-color: orangered;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 30px 40px;
 }
 
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: black;
     font-size: 36pt;
-    text-decoration: none;
+    text-decoration: forestgreen;
+    font-family: 'Lobster', cursive;
 }
 
 .content {
@@ -39,11 +41,11 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: greenyellow;
+.top-menu, .top-menu:hover,  .top-menu:visited {
+    color: forestgreen;
     float: right;
-    font-size: 26pt;
-    margin-right: 20px;
+    font-size: 30pt;
+    margin-right: 30px;
 }
 
 .post {
@@ -53,3 +55,4 @@ h1, h2, h3, h4 {
 .post h1 a, .post h1 a:visited {
     color: crimson;
 }
+
